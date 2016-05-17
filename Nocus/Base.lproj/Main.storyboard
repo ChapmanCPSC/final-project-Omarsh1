@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="mapMain" id="BYZ-38-t0r" customClass="ViewController" customModule="Nocus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EyI-ec-rTj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EyI-ec-rTj" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="3GW-73-Di6"/>
+                            <constraint firstAttribute="trailing" secondItem="EyI-ec-rTj" secondAttribute="trailing" id="4YZ-Nu-NRG"/>
+                            <constraint firstItem="EyI-ec-rTj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DoP-Hj-0xS"/>
+                            <constraint firstItem="EyI-ec-rTj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XEn-6P-Kco"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nocusMapView" destination="EyI-ec-rTj" id="EIN-0a-y7m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="368"/>
+        </scene>
+        <!--Note Taker View Controller-->
+        <scene sceneID="xtR-Ph-fq6">
+            <objects>
+                <viewController storyboardIdentifier="takeNotes" id="IyI-vf-zgz" customClass="NoteTakerViewController" customModule="Nocus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZL3-CP-BAp"/>
+                        <viewControllerLayoutGuide type="bottom" id="8cw-v8-nEP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y6C-yQ-vYP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOF-9Q-fbX">
+                                <rect key="frame" x="20" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancel:" destination="IyI-vf-zgz" eventType="touchUpInside" id="OmW-qP-0Pe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lr7-Tb-pHc">
+                                <rect key="frame" x="543" y="28" width="30" height="30"/>
+                                <state key="normal" title="💾"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tap To Edit Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pNs-0j-hHx">
+                                <rect key="frame" x="242" y="27" width="116" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.78854955810000005" green="0.083758873407680096" blue="0.16750609145343506" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Edit Notes" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kJO-oK-zGR">
+                                <rect key="frame" x="0.0" y="83" width="600" height="517"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="pNs-0j-hHx" secondAttribute="bottom" constant="542" id="5nN-ZU-Wa0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pNs-0j-hHx" secondAttribute="trailing" constant="222" id="HUJ-a8-wbA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lr7-Tb-pHc" secondAttribute="trailing" constant="7" id="JeV-tj-naB"/>
+                            <constraint firstItem="pNs-0j-hHx" firstAttribute="top" secondItem="ZL3-CP-BAp" secondAttribute="bottom" constant="7" id="TMW-Xg-fSa"/>
+                            <constraint firstItem="pNs-0j-hHx" firstAttribute="leading" secondItem="y6C-yQ-vYP" secondAttribute="leadingMargin" constant="222" id="c6j-Je-IzO"/>
+                            <constraint firstItem="lr7-Tb-pHc" firstAttribute="baseline" secondItem="jOF-9Q-fbX" secondAttribute="baseline" id="vIy-17-Eoa"/>
+                            <constraint firstItem="jOF-9Q-fbX" firstAttribute="leading" secondItem="y6C-yQ-vYP" secondAttribute="leadingMargin" id="yFe-37-geZ"/>
+                            <constraint firstItem="jOF-9Q-fbX" firstAttribute="top" secondItem="ZL3-CP-BAp" secondAttribute="bottom" constant="8" symbolic="YES" id="z1W-A0-PWQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i39-FB-V2V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983" y="368"/>
+        </scene>
+    </scenes>
+</document>
